@@ -1,7 +1,7 @@
 package com.iamrishavdas;
 
 import java.io.File;
-import java.util.ArrayList;
+
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -44,7 +44,7 @@ public class SendMail {
         // creating message
         try{
             Message msg = new MimeMessage(session);
-            msg.addRecipients(Message.RecipientType.CC, InternetAddress.parse("rishavdaskaberipara@gmail.com,iamrishavdas@gmail.com,souvik2003maity@gmail.com"));
+            msg.addRecipients(Message.RecipientType.CC, readRecipients());
             msg.setFrom(new InternetAddress(from));
             msg.setSubject(subject);
             msg.setText(message);
@@ -64,9 +64,8 @@ public class SendMail {
         try {
             scanner = new Scanner(recipientList);
             while (scanner.hasNextLine()) {
-                s.append(scanner.nextLine() + ",");
+                s.append(scanner.nextLine());
             }
-            s.setCharAt(s.length()-1, ' ');
             scanner.close();
             return InternetAddress.parse(String.valueOf(s));
         } catch (Exception e) {
