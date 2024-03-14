@@ -57,7 +57,7 @@ public class SendMail {
         return flag;
     }
 
-    private InternetAddress[] readRecipients(){
+    private InternetAddress[] readRecipients() {
         StringBuilder s = new StringBuilder("");
         Scanner scanner;
         File recipientList = new File("C:\\Users\\Risha\\Desktop\\JFactApp\\JFactApp\\iamrishavdas\\src\\main\\resources\\Recipients.txt");
