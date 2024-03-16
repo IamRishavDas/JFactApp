@@ -8,7 +8,7 @@ public class Main {
             WebScrapper.updateFactCount();
             System.out.println("message sended succfully!");
         } else {
-            System.out.println("error while sending!");
+            System.out.println("error occours while sending the message!");
         }
     }
 }
