@@ -15,6 +15,15 @@ import jakarta.mail.internet.MimeMessage;
 
 public class SendMail {
 
+    // credential
+    private String user = "javafactmail@gmail.com";
+    private String password = "";
+
+    public SendMail(){
+        this.password = enterPassword();
+    }
+
+
     public boolean send(String to, String from, String subject, String message){
         boolean flag = false;
 
@@ -27,9 +36,7 @@ public class SendMail {
         prop.put("mail.smtp.socketFactory.port", "465");
         prop.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 
-        // credential
-        String user = "javafactmail@gmail.com";
-        String password = "njlm pmfr csbp cbcw";
+        
 
         // creating authonticator
         Authenticator auth = new Authenticator() {
@@ -55,6 +62,15 @@ public class SendMail {
         }
 
         return flag;
+    }
+
+    private String enterPassword(){
+        String password = "";
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the password: ");
+        password = input.nextLine();
+        input.close();
+        return password;
     }
 
     private InternetAddress[] readRecipients() {
