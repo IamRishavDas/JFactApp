@@ -69,17 +69,4 @@ public class WebScrapper {
         }
 
     }
-
-    public static void main(String[] args) {
-        // new WebScrapper().getFact();
-
-        // System.out.println(readFactCount());
-        // updateFactCount();
-        // System.out.println(readFactCount());
-
-        // getFact();
-        // updateFactCount();
-
-        System.out.println(getFact());
-    }
 }
